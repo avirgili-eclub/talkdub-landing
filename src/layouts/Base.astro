@@ -1,0 +1,48 @@
+---
+import "../styles/landing.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  lang?: string;
+}
+
+const {
+  title = "Parla — Traducción de voz en tiempo real",
+  description = "Hablá en tu idioma. Que te escuchen en el suyo. Traducción de voz en vivo con tu propia voz, por un micrófono virtual hacia Meet, Zoom, Teams, Discord y Slack.",
+  lang = "es",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#070a12" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;450;500;540;600;640;700&family=Geist+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="aurora-bg"></div>
+    <div class="aurora-grid"></div>
+
+    <slot />
+
+    <!-- Interactive behaviours (i18n must load before app). Kept as plain
+         scripts so they run untouched, mirroring the original build. -->
+    <script is:inline src="/scripts/i18n.js"></script>
+    <script is:inline src="/scripts/app.js" defer></script>
+  </body>
+</html>

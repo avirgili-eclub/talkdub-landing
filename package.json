@@ -1,0 +1,17 @@
+{
+  "name": "talkdub-landing",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Parla — real-time voice translation landing page, by Veinticuatro7 Studio",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^4.16.18"
+  }
+}

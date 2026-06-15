@@ -1,0 +1,429 @@
+/* ============================================================
+   Parla — custom i18n module
+   Locales: es (default), en  ·  mirrors the Astro build's i18n
+   Usage: data-i18n="key" on any element. Attributes:
+     data-i18n-ph  -> sets placeholder
+   ============================================================ */
+(function () {
+  const DICT = {
+    es: {
+      /* nav */
+      nav_how: "Cómo funciona",
+      nav_uses: "Casos de uso",
+      nav_voice: "Tu voz",
+      nav_langs: "Idiomas",
+      nav_pricing: "Precios",
+      nav_signin: "Iniciar sesión",
+      cta_whitelist: "Unirse a la whitelist",
+      cta_whitelist_short: "Whitelist",
+
+      /* hero */
+      hero_badge: "En vivo · Latencia < 200 ms",
+      hero_title_a: "Hablá en tu idioma.",
+      hero_title_b: "Que te escuchen en el suyo.",
+      hero_sub: "Traducción de voz en tiempo real. Tu voz sale traducida por un micrófono virtual hacia Meet, Zoom, Teams, Discord, Slack y cualquier app donde haya un micrófono.",
+      hero_demo: "Ver demo",
+      hero_m1: "Sin delay incómodo",
+      hero_m2: "Con tu propia voz",
+      hero_m3: "ES · EN · IT",
+      /* console */
+      con_title: "Parla · Sesión en vivo",
+      con_in: "Entrada · Español",
+      con_out: "Salida · Inglés",
+      con_conv: "Traduciendo en vivo",
+      con_vmic: "Micrófono virtual de Parla",
+      con_lat: "latencia",
+      chip_voice: "Tu voz clonada",
+      chip_live: "En vivo",
+
+      /* integrations */
+      integ_cap: "Funciona donde ya trabajás",
+      integ_web: "Navegador web",
+      integ_more: "y cualquier app con micrófono",
+
+      /* how it works */
+      how_eyebrow: "Cómo funciona",
+      how_title: "Tres pasos. Cero fricción.",
+      how_sub: "Conectás Parla una vez y queda disponible como un micrófono más en todo el sistema.",
+      step1_t: "Hablá normal",
+      step1_d: "Usás tu micrófono real y hablás en tu idioma, como siempre. Sin scripts ni botones raros.",
+      step2_t: "Parla traduce",
+      step2_d: "Transcribe, traduce y reconstruye tu voz en el idioma de destino, en tiempo real.",
+      step3_t: "Salí por el mic virtual",
+      step3_d: "La voz traducida se inyecta como un micrófono virtual. Lo elegís en Meet, Zoom o donde sea.",
+
+      /* use cases */
+      uc_eyebrow: "Casos de uso",
+      uc_title: "Donde el idioma no puede frenarte.",
+      uc_sub: "Pensado para todo lo que pasa en tiempo real, donde no podés pausar para traducir.",
+      ucf_t: "Reuniones internacionales",
+      ucf_d: "Cerrá ventas y alineá equipos sin trabarte. Hablás en español y te escuchan en inglés, en vivo.",
+      ucf_live: "En tiempo real",
+      uc1_t: "Equipos remotos",
+      uc1_d: "Standups y syncs multiculturales donde cada uno habla cómodo en su idioma.",
+      uc2_t: "Entrevistas de trabajo",
+      uc2_d: "Mostrá tu mejor versión en cualquier idioma, sin que las palabras te jueguen en contra.",
+      uc3_t: "Exámenes y clases en vivo",
+      uc3_d: "Rendí o enseñá en tiempo real en otro idioma, con tu voz y sin demoras.",
+      uc4_t: "Y mucho más",
+      uc4_d: "Cualquier momento en vivo donde necesitás hablar en otro idioma.",
+      os_avail: "Para Windows y macOS",
+
+      /* voice */
+      voice_eyebrow: "Tu voz, en otro idioma",
+      voice_title: "Soná como vos. En cualquier idioma.",
+      voice_sub: "Parla no te convierte en un robot. Cloná tu propia voz o elegí una predefinida según el contexto.",
+      vf1_t: "Clon de tu voz",
+      vf1_d: "Entrenás Parla con 30 segundos de tu voz y hablás en inglés o italiano sonando como vos.",
+      vf2_t: "Voces predefinidas",
+      vf2_d: "¿No querés clonar? Elegí un tono listo: casual, profesional o de entrevista.",
+      vf3_t: "Tono natural",
+      vf3_d: "Entonación, pausas y ritmo humanos. Nada de cadencia robótica ni metálica.",
+      preset_yours: "Tu voz (clonada)",
+      preset_yours_d: "Tu timbre real en el idioma de destino",
+      preset_casual_n: "Casual",
+      preset_casual_d: "Relajado y cercano, para charlas",
+      preset_pro_n: "Profesional",
+      preset_pro_d: "Claro y neutro, para reuniones",
+      preset_int_n: "Entrevista",
+      preset_int_d: "Seguro y articulado, para cámara",
+      preset_active: "Activa",
+      preset_use: "Usar",
+
+      /* languages */
+      lang_eyebrow: "Idiomas",
+      lang_title: "Español, inglés e italiano — en ambos sentidos.",
+      lang_sub: "Cada idioma funciona como origen y como destino de la voz. Mezclá como quieras.",
+      tag_src: "Origen",
+      tag_tgt: "Destino",
+      lang_soon: "Portugués, francés y alemán en camino",
+
+      /* history + mcp */
+      hist_eyebrow: "Historial & MCP",
+      hist_title: "Cada reunión, lista para tu IA.",
+      hist_sub: "Parla guarda el historial de cada sesión con transcripción y traducción. Exportalo o conectá tu IA por MCP para que arme resúmenes y tareas solo.",
+      hf1_t: "Historial de sesiones",
+      hf1_d: "Transcripción bilingüe, duración y participantes de cada reunión, buscable.",
+      hf2_t: "Exportá a tu IA",
+      hf2_d: "Markdown, JSON o directo a Notion. Llevá la reunión adonde la necesites.",
+      hf3_t: "Conectá tu IA",
+      hf3_d: "Por MCP, conectá Claude, ChatGPT o cualquier IA: lee tus reuniones y arma resúmenes y tareas solo.",
+      sess1_t: "Sync con equipo de Milán",
+      sess1_s: "IT → ES · 4 participantes · hoy",
+      sess2_t: "Demo de producto — cliente US",
+      sess2_s: "ES → EN · 2 participantes · ayer",
+      sess3_t: "Entrevista podcast #42",
+      sess3_s: "EN → ES · 2 participantes · lun",
+      mcp_n1: "Parla",
+      mcp_n2: "Servidor MCP",
+      mcp_n3: "Tu IA",
+      export_md: "Markdown",
+      export_json: "JSON",
+      export_notion: "Notion",
+      export_mcp: "Resúmenes y tareas automáticas",
+
+      /* pricing */
+      price_eyebrow: "Precios",
+      price_title: "Elegí el plan a tu medida.",
+      price_sub: "Suscripción mensual o anual con minutos incluidos. Si te pasás, pagás extra solo por lo que uses.",
+      bill_monthly: "Mensual",
+      bill_annual: "Anual",
+      per_month: "/mes",
+      save_badge: "2 meses gratis",
+      billed_month: "facturado por mes",
+      bn_month: "Los minutos se renuevan cada mes.",
+      bn_annual1: "Ahorrás 2 meses con la facturación anual.",
+      bn_annual2: "Los minutos se acumulan hasta 2 meses.",
+      bn_annual3: "Los minutos extra se cobran solo cuando los usás.",
+
+      st_name: "Starter",
+      st_kind: "Para empezar",
+      st_min: "120 min incluidos / mes",
+      st_extra: "Extra a $0.14 / min",
+      st_f1: "Los 3 idiomas (ES · EN · IT)",
+      st_f2: "Clon de tu propia voz",
+      st_f3: "Micrófono virtual",
+      st_f4: "Historial + exportación",
+      st_cta: "Unirse a la whitelist",
+
+      pp_name: "Pro",
+      pp_kind: "Para uso intenso",
+      pp_tag: "Más elegido",
+      pp_min: "400 min incluidos / mes",
+      pp_extra: "Extra a $0.12 / min",
+      pp_f1: "Todo lo de Starter, más:",
+      pp_f2: "Conectá tu IA",
+      pp_f3: "Soporte prioritario",
+      pp_cta: "Unirse a la whitelist",
+
+      tm_name: "Team",
+      tm_kind: "Para equipos",
+      tm_min: "1.500 min / mes compartidos",
+      tm_extra: "Extra a $0.11 / min",
+      tm_f1: "Todo lo de Pro, más:",
+      tm_f2: "Hasta 5 asientos",
+      tm_f3: "Panel de equipo y facturación",
+      tm_cta: "Unirse a la whitelist",
+
+      tip_ai: "Por MCP — el estándar abierto para IAs. Conectá Claude, ChatGPT o cualquier IA a tus reuniones.",
+
+      cr_name: "Créditos · Pay as you go",
+      cr_kind: "Pagás por uso · sin vencimiento · solo en plan mensual",
+      cr_per: "por pack",
+      cr_dur_lbl: "de traducción",
+      cr_f1: "Probá con 30 min por $9",
+      cr_f2: "Después, $15 por hora",
+      cr_f3: "Los créditos no vencen",
+      cr_f4: "Los 3 idiomas y tu voz clonada",
+      cr_cta: "Comprar créditos",
+
+      /* final cta */
+      final_title: "Sumate a la whitelist.",
+      final_sub: "Estamos abriendo acceso por tandas. Dejanos tu email y sé de los primeros en hablar sin barreras.",
+      final_ph: "tu@email.com",
+      final_btn: "Unirme a la whitelist",
+      final_note: "Apps para Windows y macOS · Acceso anticipado · Sin spam",
+
+      /* footer */
+      foot_tag: "Traducción de voz en tiempo real, con tu propia voz. Por Veinticuatro7 Studio.",
+      foot_product: "Producto",
+      foot_resources: "Recursos",
+      foot_company: "Empresa",
+      fl_how: "Cómo funciona",
+      fl_pricing: "Precios",
+      fl_voice: "Clon de voz",
+      fl_langs: "Idiomas",
+      fl_docs: "Documentación",
+      fl_mcp: "MCP & API",
+      fl_status: "Estado",
+      fl_changelog: "Novedades",
+      fl_about: "Nosotros",
+      fl_privacy: "Privacidad",
+      fl_terms: "Términos",
+      fl_contact: "Contacto",
+      foot_rights: "© 2026 Veinticuatro7 Studio. Todos los derechos reservados.",
+    },
+
+    en: {
+      nav_how: "How it works",
+      nav_uses: "Use cases",
+      nav_voice: "Your voice",
+      nav_langs: "Languages",
+      nav_pricing: "Pricing",
+      nav_signin: "Sign in",
+      cta_whitelist: "Join the whitelist",
+      cta_whitelist_short: "Whitelist",
+
+      hero_badge: "Live · Latency < 200 ms",
+      hero_title_a: "Speak your language.",
+      hero_title_b: "Be heard in theirs.",
+      hero_sub: "Real-time voice translation. Your voice goes out translated through a virtual microphone into Meet, Zoom, Teams, Discord, Slack — any app with a mic.",
+      hero_demo: "Watch demo",
+      hero_m1: "No awkward delay",
+      hero_m2: "In your own voice",
+      hero_m3: "ES · EN · IT",
+      con_title: "Parla · Live session",
+      con_in: "Input · Spanish",
+      con_out: "Output · English",
+      con_conv: "Translating live",
+      con_vmic: "Parla virtual microphone",
+      con_lat: "latency",
+      chip_voice: "Your cloned voice",
+      chip_live: "Live",
+
+      integ_cap: "Works where you already work",
+      integ_web: "Web browser",
+      integ_more: "and any app with a mic",
+
+      how_eyebrow: "How it works",
+      how_title: "Three steps. Zero friction.",
+      how_sub: "Set Parla up once and it shows up as just another microphone across your whole system.",
+      step1_t: "Speak normally",
+      step1_d: "Use your real mic and talk in your language, like always. No scripts, no weird buttons.",
+      step2_t: "Parla translates",
+      step2_d: "It transcribes, translates and rebuilds your voice in the target language, in real time.",
+      step3_t: "Out through the virtual mic",
+      step3_d: "The translated voice is injected as a virtual microphone. Pick it in Meet, Zoom or anywhere.",
+
+      uc_eyebrow: "Use cases",
+      uc_title: "Where language can't slow you down.",
+      uc_sub: "Built for everything that happens in real time, where you can't pause to translate.",
+      ucf_t: "International meetings",
+      ucf_d: "Close deals and align teams without stumbling. You speak Spanish, they hear English — live.",
+      ucf_live: "Real time",
+      uc1_t: "Remote teams",
+      uc1_d: "Multicultural standups and syncs where everyone speaks comfortably in their own language.",
+      uc2_t: "Job interviews",
+      uc2_d: "Show your best self in any language, without words getting in your way.",
+      uc3_t: "Live exams & classes",
+      uc3_d: "Sit or teach in real time in another language, in your voice and with no delay.",
+      uc4_t: "And much more",
+      uc4_d: "Any live moment where you need to speak another language.",
+      os_avail: "For Windows and macOS",
+
+      voice_eyebrow: "Your voice, in another language",
+      voice_title: "Sound like you. In any language.",
+      voice_sub: "Parla doesn't turn you into a robot. Clone your own voice or pick a preset to fit the moment.",
+      vf1_t: "Clone your voice",
+      vf1_d: "Train Parla with 30 seconds of your voice and speak English or Italian sounding like you.",
+      vf2_t: "Preset voices",
+      vf2_d: "Don't want to clone? Pick a ready-made tone: casual, professional or interview.",
+      vf3_t: "Natural tone",
+      vf3_d: "Human intonation, pauses and rhythm. None of that robotic, metallic cadence.",
+      preset_yours: "Your voice (cloned)",
+      preset_yours_d: "Your real timbre in the target language",
+      preset_casual_n: "Casual",
+      preset_casual_d: "Relaxed and warm, for chats",
+      preset_pro_n: "Professional",
+      preset_pro_d: "Clear and neutral, for meetings",
+      preset_int_n: "Interview",
+      preset_int_d: "Confident and crisp, for camera",
+      preset_active: "Active",
+      preset_use: "Use",
+
+      lang_eyebrow: "Languages",
+      lang_title: "Spanish, English and Italian — both ways.",
+      lang_sub: "Every language works as a source and as a voice target. Mix them however you like.",
+      tag_src: "Source",
+      tag_tgt: "Target",
+      lang_soon: "Portuguese, French and German on the way",
+
+      hist_eyebrow: "History & MCP",
+      hist_title: "Every meeting, ready for your AI.",
+      hist_sub: "Parla keeps the history of every session with transcript and translation. Export it, or connect your AI over MCP so it builds summaries and tasks on its own.",
+      hf1_t: "Session history",
+      hf1_d: "Bilingual transcript, duration and participants for every meeting, searchable.",
+      hf2_t: "Export to your AI",
+      hf2_d: "Markdown, JSON or straight to Notion. Take the meeting wherever you need it.",
+      hf3_t: "Connect your AI",
+      hf3_d: "Over MCP, connect Claude, ChatGPT or any AI: it reads your meetings and drafts summaries and tasks on its own.",
+      sess1_t: "Sync with the Milan team",
+      sess1_s: "IT → ES · 4 participants · today",
+      sess2_t: "Product demo — US client",
+      sess2_s: "ES → EN · 2 participants · yesterday",
+      sess3_t: "Podcast interview #42",
+      sess3_s: "EN → ES · 2 participants · Mon",
+      mcp_n1: "Parla",
+      mcp_n2: "MCP server",
+      mcp_n3: "Your AI",
+      export_md: "Markdown",
+      export_json: "JSON",
+      export_notion: "Notion",
+      export_mcp: "Auto summaries & tasks",
+
+      price_eyebrow: "Pricing",
+      price_title: "Pick the plan that fits.",
+      price_sub: "Monthly or annual subscription with minutes included. Go over and you only pay extra for what you use.",
+      bill_monthly: "Monthly",
+      bill_annual: "Annual",
+      per_month: "/mo",
+      save_badge: "2 months free",
+      billed_month: "billed monthly",
+      bn_month: "Minutes reset every month.",
+      bn_annual1: "Save 2 months with annual billing.",
+      bn_annual2: "Minutes accumulate for up to 2 months.",
+      bn_annual3: "Extra minutes billed only when you need them.",
+
+      st_name: "Starter",
+      st_kind: "To get started",
+      st_min: "120 min included / mo",
+      st_extra: "Extra at $0.14 / min",
+      st_f1: "All 3 languages (ES · EN · IT)",
+      st_f2: "Clone of your own voice",
+      st_f3: "Virtual microphone",
+      st_f4: "History + export",
+      st_cta: "Join the whitelist",
+
+      pp_name: "Pro",
+      pp_kind: "For heavy use",
+      pp_tag: "Most popular",
+      pp_min: "400 min included / mo",
+      pp_extra: "Extra at $0.12 / min",
+      pp_f1: "Everything in Starter, plus:",
+      pp_f2: "Connect your AI",
+      pp_f3: "Priority support",
+      pp_cta: "Join the whitelist",
+
+      tm_name: "Team",
+      tm_kind: "For teams",
+      tm_min: "1,500 min / mo shared",
+      tm_extra: "Extra at $0.11 / min",
+      tm_f1: "Everything in Pro, plus:",
+      tm_f2: "Up to 5 seats",
+      tm_f3: "Team dashboard & billing",
+      tm_cta: "Join the whitelist",
+
+      tip_ai: "Over MCP — the open standard for AIs. Connect Claude, ChatGPT or any AI to your meetings.",
+
+      cr_name: "Credits · Pay as you go",
+      cr_kind: "Pay per use · never expire · monthly plan only",
+      cr_per: "per pack",
+      cr_dur_lbl: "of translation",
+      cr_f1: "Try 30 min for $9",
+      cr_f2: "After that, $15 per hour",
+      cr_f3: "Credits never expire",
+      cr_f4: "All 3 languages and your cloned voice",
+      cr_cta: "Buy credits",
+
+      final_title: "Join the whitelist.",
+      final_sub: "We're opening access in waves. Drop your email and be among the first to talk without barriers.",
+      final_ph: "you@email.com",
+      final_btn: "Join the whitelist",
+      final_note: "Apps for Windows and macOS · Early access · No spam",
+
+      foot_tag: "Real-time voice translation, in your own voice. By Veinticuatro7 Studio.",
+      foot_product: "Product",
+      foot_resources: "Resources",
+      foot_company: "Company",
+      fl_how: "How it works",
+      fl_pricing: "Pricing",
+      fl_voice: "Voice cloning",
+      fl_langs: "Languages",
+      fl_docs: "Documentation",
+      fl_mcp: "MCP & API",
+      fl_status: "Status",
+      fl_changelog: "Changelog",
+      fl_about: "About",
+      fl_privacy: "Privacy",
+      fl_terms: "Terms",
+      fl_contact: "Contact",
+      foot_rights: "© 2026 Veinticuatro7 Studio. All rights reserved.",
+    },
+  };
+
+  const DEFAULT = "es";
+  let current = DEFAULT;
+
+  function t(key) {
+    return (DICT[current] && DICT[current][key]) || (DICT[DEFAULT][key]) || key;
+  }
+
+  function apply(root) {
+    (root || document).querySelectorAll("[data-i18n]").forEach((el) => {
+      el.textContent = t(el.getAttribute("data-i18n"));
+    });
+    (root || document).querySelectorAll("[data-i18n-ph]").forEach((el) => {
+      el.setAttribute("placeholder", t(el.getAttribute("data-i18n-ph")));
+    });
+  }
+
+  function setLocale(loc) {
+    if (!DICT[loc]) return;
+    current = loc;
+    document.documentElement.setAttribute("lang", loc);
+    apply();
+    document.querySelectorAll("[data-lang-btn]").forEach((b) => {
+      b.classList.toggle("on", b.getAttribute("data-lang-btn") === loc);
+    });
+    window.dispatchEvent(new CustomEvent("localechange", { detail: { locale: loc } }));
+    try { localStorage.setItem("parla_locale", loc); } catch (e) {}
+  }
+
+  window.i18n = { t, setLocale, apply, get locale() { return current; } };
+
+  document.addEventListener("DOMContentLoaded", function () {
+    let saved = DEFAULT;
+    try { saved = localStorage.getItem("parla_locale") || DEFAULT; } catch (e) {}
+    setLocale(saved);
+  });
+})();

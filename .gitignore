@@ -1,0 +1,34 @@
+# build output
+dist/
+.output/
+
+# dependencies
+node_modules/
+
+# astro
+.astro/
+
+# env
+.env
+.env.production
+.env.*.local
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# editor / os
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+
+# original Claude Design handoff bundle (reference only, not deployed)
+_design_bundle/
+
+# local tooling artifacts
+.atl/
+.claude/

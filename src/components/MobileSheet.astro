@@ -1,0 +1,33 @@
+---
+// Fullscreen mobile menu. Open/close handled in app.js via #burger / [data-close-menu].
+---
+
+<div class="m-sheet" id="m-sheet">
+  <div class="wrap m-top" style="padding:0;">
+    <a class="brand" href="#top" data-close-menu>
+      <svg class="logo" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <rect width="32" height="32" rx="9" fill="url(#plg2)" />
+        <g stroke="#021510" stroke-width="2.4" stroke-linecap="round"><path d="M9 11v10" /><path d="M14 8v16" /><path d="M19 12.5v7" /><path d="M24 14.5v3" /></g>
+        <defs><linearGradient id="plg2" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#34d3ee" /><stop offset="1" stop-color="#3ee0a0" /></linearGradient></defs>
+      </svg>
+      <span class="name">Parla</span>
+    </a>
+    <button class="m-close" id="m-close" aria-label="Cerrar">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18" /></svg>
+    </button>
+  </div>
+  <nav>
+    <a href="#how" data-close-menu data-i18n="nav_how">Cómo funciona</a>
+    <a href="#uses" data-close-menu data-i18n="nav_uses">Casos de uso</a>
+    <a href="#voice" data-close-menu data-i18n="nav_voice">Tu voz</a>
+    <a href="#langs" data-close-menu data-i18n="nav_langs">Idiomas</a>
+    <a href="#pricing" data-close-menu data-i18n="nav_pricing">Precios</a>
+  </nav>
+  <div class="m-cta">
+    <div class="lang" style="align-self:flex-start;">
+      <button data-lang-btn="es" class="on">ES</button>
+      <button data-lang-btn="en">EN</button>
+    </div>
+    <a href="#join" class="btn btn-primary btn-lg btn-block" data-close-menu data-i18n="cta_whitelist">Unirse a la whitelist</a>
+  </div>
+</div>

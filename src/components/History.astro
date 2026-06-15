@@ -1,0 +1,63 @@
+---
+// History & MCP — session list, MCP flow and export chips.
+---
+
+<section class="section" id="history">
+  <div class="wrap split">
+    <div class="split-copy reveal">
+      <span class="eyebrow" data-i18n="hist_eyebrow">Historial & MCP</span>
+      <h2 class="h-sec" style="margin-top:16px;" data-i18n="hist_title">Cada reunión, lista para tu IA.</h2>
+      <p class="lead" style="margin-top:16px;" data-i18n="hist_sub">Parla guarda el historial de cada sesión con transcripción y traducción. Exportalo o conectá tu IA por MCP para que arme resúmenes y tareas solo.</p>
+      <ul class="feat-list">
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4.5h11a2 2 0 0 1 2 2v13H7a2 2 0 0 0-2 2z" /><path d="M5 19.5a2 2 0 0 1 2-2h11" /></svg></span><span><span class="ft-t" data-i18n="hf1_t">Historial de sesiones</span><span class="ft-d" data-i18n="hf1_d">Transcripción bilingüe, duración y participantes de cada reunión, buscable.</span></span></li>
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7.5 11 12 15.5 16.5 11" /><path d="M5 19.5h14" /></svg></span><span><span class="ft-t" data-i18n="hf2_t">Exportá a tu IA</span><span class="ft-d" data-i18n="hf2_d">Markdown, JSON o directo a Notion. Llevá la reunión adonde la necesites.</span></span></li>
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v4M11 3v4" /><path d="M5 7h8v3a4 4 0 0 1-4 4 4 4 0 0 1-4-4z" /><path d="M9 14v3a3 3 0 0 0 3 3h2a3 3 0 0 0 3-3v-3" /><path d="M17 14h2" /></svg></span><span><span class="ft-head"><span class="ft-t" data-i18n="hf3_t">Conectá tu IA</span><span class="tip" tabindex="0"><svg class="tip-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" /><path d="M12 11v5M12 7.8v.2" /></svg><span class="tip-bub"><b>MCP</b> · <span data-i18n="tip_ai">Por MCP — el estándar abierto para IAs. Conectá Claude, ChatGPT o cualquier IA a tus reuniones.</span></span></span></span><span class="ft-d" data-i18n="hf3_d">Por MCP, conectá Claude, ChatGPT o cualquier IA: lee tus reuniones y arma resúmenes y tareas solo.</span></span></li>
+      </ul>
+    </div>
+    <div class="split-media reveal">
+      <div class="card card-pad">
+        <div class="session-list">
+          <div class="session">
+            <span class="s-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h2M7.5 8v8M12 4v16M16.5 8v8M21 12h-2" /></svg></span>
+            <div class="s-meta"><div class="s-title" data-i18n="sess1_t">Sync con equipo de Milán</div><div class="s-sub" data-i18n="sess1_s">IT → ES · 4 participantes · hoy</div></div>
+            <span class="s-dur">42:18</span>
+          </div>
+          <div class="session">
+            <span class="s-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h2M7.5 8v8M12 4v16M16.5 8v8M21 12h-2" /></svg></span>
+            <div class="s-meta"><div class="s-title" data-i18n="sess2_t">Demo de producto — cliente US</div><div class="s-sub" data-i18n="sess2_s">ES → EN · 2 participantes · ayer</div></div>
+            <span class="s-dur">27:05</span>
+          </div>
+          <div class="session">
+            <span class="s-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h2M7.5 8v8M12 4v16M16.5 8v8M21 12h-2" /></svg></span>
+            <div class="s-meta"><div class="s-title" data-i18n="sess3_t">Entrevista podcast #42</div><div class="s-sub" data-i18n="sess3_s">EN → ES · 2 participantes · lun</div></div>
+            <span class="s-dur">58:40</span>
+          </div>
+        </div>
+
+        <div class="mcp-flow" style="margin-top:24px;">
+          <div class="mcp-node accent">
+            <span class="mn-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h2M7.5 8v8M12 4v16M16.5 8v8M21 12h-2" /></svg></span>
+            <span class="mn-lbl" data-i18n="mcp_n1">Parla</span>
+          </div>
+          <div class="mcp-pipe"></div>
+          <div class="mcp-node">
+            <span class="mn-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v4M11 3v4" /><path d="M5 7h8v3a4 4 0 0 1-4 4 4 4 0 0 1-4-4z" /><path d="M9 14v3a3 3 0 0 0 3 3h2a3 3 0 0 0 3-3v-3" /><path d="M17 14h2" /></svg></span>
+            <span class="mn-lbl" data-i18n="mcp_n2">Servidor MCP</span>
+          </div>
+          <div class="mcp-pipe"></div>
+          <div class="mcp-node">
+            <span class="mn-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z" fill="currentColor" stroke="none" /></svg></span>
+            <span class="mn-lbl" data-i18n="mcp_n3">Tu IA</span>
+          </div>
+        </div>
+
+        <div class="export-chips">
+          <span class="export-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="2" /><path d="M6 14V10l2 2 2-2v4M14 10v4M14 13l2 2 2-2" /></svg><span data-i18n="export_md">Markdown</span></span>
+          <span class="export-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4c-2 0-3 1-3 3v2c0 1.2-.8 2-2 2 1.2 0 2 .8 2 2v2c0 2 1 3 3 3M16 4c2 0 3 1 3 3v2c0 1.2.8 2 2 2-1.2 0-2 .8-2 2v2c0 2-1 3-3 3" /></svg><span data-i18n="export_json">JSON</span></span>
+          <span class="export-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2" /><path d="M8 8l8 1M8 12h6M8 16h7" /></svg><span data-i18n="export_notion">Notion</span></span>
+          <span class="export-chip"><svg viewBox="0 0 24 24" fill="none" stroke="#3ee0a0" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z" fill="#3ee0a0" stroke="none" /></svg><span data-i18n="export_mcp">Resúmenes y tareas automáticas</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

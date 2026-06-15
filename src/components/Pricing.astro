@@ -1,0 +1,115 @@
+---
+// Pricing — billing toggle, three plans and pay-as-you-go credits band.
+// Amounts and the credits slider are driven by app.js.
+---
+
+<section class="section" id="pricing">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow" data-i18n="price_eyebrow">Precios</span>
+      <h2 class="h-sec" style="margin-top:16px;" data-i18n="price_title">Elegí el plan a tu medida.</h2>
+      <p class="lead" style="margin-top:16px;" data-i18n="price_sub">Suscripción mensual o anual con minutos incluidos. Si te pasás, pagás extra solo por lo que uses.</p>
+      <div class="price-toggle" style="margin-top:26px;">
+        <div class="seg2">
+          <button data-bill="monthly" class="on" data-i18n="bill_monthly">Mensual</button>
+          <button data-bill="annual" data-i18n="bill_annual">Anual</button>
+        </div>
+        <span class="save-badge" id="save-badge" style="opacity:0;" data-i18n="save_badge">2 meses gratis</span>
+      </div>
+      <div class="bill-notes">
+        <div id="bill-notes-monthly">
+          <span class="bn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 8a8 8 0 0 0-14-3L4 7M4 4v3h3" /><path d="M4 16a8 8 0 0 0 14 3l2-2M20 20v-3h-3" /></svg><span data-i18n="bn_month">Los minutos se renuevan cada mes.</span></span>
+        </div>
+        <div id="bill-notes-annual" style="display:none;">
+          <span class="bn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17 19 7" /></svg><span data-i18n="bn_annual1">Ahorrás 2 meses con la facturación anual.</span></span>
+          <span class="bn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17 19 7" /></svg><span data-i18n="bn_annual2">Los minutos se acumulan hasta 2 meses.</span></span>
+          <span class="bn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17 19 7" /></svg><span data-i18n="bn_annual3">Los minutos extra se cobran solo cuando los usás.</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="price-grid reveal" data-stagger>
+      <!-- Starter -->
+      <div class="card price-card">
+        <div class="pc-name" data-i18n="st_name">Starter</div>
+        <div class="pc-kind" data-i18n="st_kind">Para empezar</div>
+        <div class="pc-price"><span class="pc-amt" id="amt-starter">$19</span><span class="pc-per" data-i18n="per_month">/mes</span></div>
+        <div class="pc-note" id="note-starter" data-i18n="billed_month">facturado por mes</div>
+        <div class="pc-min"><b data-i18n="st_min">120 min incluidos / mes</b></div>
+        <div class="pc-extra" data-i18n="st_extra">Extra a $0.14 / min</div>
+        <ul class="pc-feats">
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17 19 7" /></svg></span><span data-i18n="st_f1">Los 3 idiomas (ES · EN · IT)</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17 19 7" /></svg></span><span data-i18n="st_f2">Clon de tu propia voz</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17 19 7" /></svg></span><span data-i18n="st_f3">Micrófono virtual</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17 19 7" /></svg></span><span data-i18n="st_f4">Historial + exportación</span></li>
+        </ul>
+        <a href="#join" class="btn btn-secondary btn-block" data-i18n="st_cta">Unirse a la whitelist</a>
+      </div>
+
+      <!-- Pro -->
+      <div class="card price-card feat">
+        <span class="pc-tag" data-i18n="pp_tag">Más elegido</span>
+        <div class="pc-name" data-i18n="pp_name">Pro</div>
+        <div class="pc-kind" data-i18n="pp_kind">Para uso intenso</div>
+        <div class="pc-price"><span class="pc-amt" id="amt-pro">$59</span><span class="pc-per" data-i18n="per_month">/mes</span></div>
+        <div class="pc-note" id="note-pro" data-i18n="billed_month">facturado por mes</div>
+        <div class="pc-min"><b data-i18n="pp_min">400 min incluidos / mes</b></div>
+        <div class="pc-extra" data-i18n="pp_extra">Extra a $0.12 / min</div>
+        <ul class="pc-feats">
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17 19 7" /></svg></span><span data-i18n="pp_f1">Todo lo de Starter, más:</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17 19 7" /></svg></span><span><span data-i18n="pp_f2">Conectá tu IA</span><span class="tip" tabindex="0"><svg class="tip-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" /><path d="M12 11v5M12 7.8v.2" /></svg><span class="tip-bub"><b>MCP</b> · <span data-i18n="tip_ai">Por MCP — el estándar abierto para IAs. Conectá Claude, ChatGPT o cualquier IA a tus reuniones.</span></span></span></span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17 19 7" /></svg></span><span data-i18n="pp_f3">Soporte prioritario</span></li>
+        </ul>
+        <a href="#join" class="btn btn-primary btn-block" data-i18n="pp_cta">Unirse a la whitelist</a>
+      </div>
+
+      <!-- Team -->
+      <div class="card price-card">
+        <div class="pc-name" data-i18n="tm_name">Team</div>
+        <div class="pc-kind" data-i18n="tm_kind">Para equipos</div>
+        <div class="pc-price"><span class="pc-amt" id="amt-team">$199</span><span class="pc-per" data-i18n="per_month">/mes</span></div>
+        <div class="pc-note" id="note-team" data-i18n="billed_month">facturado por mes</div>
+        <div class="pc-min"><b data-i18n="tm_min">1.500 min / mes compartidos</b></div>
+        <div class="pc-extra" data-i18n="tm_extra">Extra a $0.11 / min</div>
+        <ul class="pc-feats">
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17 19 7" /></svg></span><span data-i18n="tm_f1">Todo lo de Pro, más:</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17 19 7" /></svg></span><span data-i18n="tm_f2">Hasta 5 asientos</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17 19 7" /></svg></span><span data-i18n="tm_f3">Panel de equipo y facturación</span></li>
+        </ul>
+        <a href="#join" class="btn btn-secondary btn-block" data-i18n="tm_cta">Unirse a la whitelist</a>
+      </div>
+    </div>
+
+    <!-- Credits · pay as you go (monthly only) -->
+    <div class="credits-band reveal" id="credits-band">
+      <div class="card credits-card">
+        <div class="credits-left">
+          <div class="credits-head">
+            <span class="ch-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 13h6l-1 9 9-11h-6z" /></svg></span>
+            <div>
+              <div class="ch-name" data-i18n="cr_name">Créditos · Pay as you go</div>
+              <div class="ch-kind" data-i18n="cr_kind">Pagás por uso · sin vencimiento · solo en plan mensual</div>
+            </div>
+          </div>
+          <div class="credit-pick">
+            <div class="credit-readout">
+              <div class="credit-price"><span class="ca" id="credit-amt">$9</span><span class="cp" data-i18n="cr_per">por pack</span></div>
+              <div class="credit-dur"><div class="cd-val" id="credit-dur-val">30 min</div><div class="cd-lbl" data-i18n="cr_dur_lbl">de traducción</div></div>
+            </div>
+            <input type="range" class="credit-range" id="credit-range" min="0" max="8" step="1" value="0" aria-label="Horas de crédito" />
+            <div class="credit-ticks"><span>30m</span><span>1h</span><span>2h</span><span>3h</span><span>4h</span><span>5h</span><span>6h</span><span>8h</span><span>10h</span></div>
+          </div>
+        </div>
+        <div class="credits-right">
+          <ul class="cr-feats">
+            <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17 19 7" /></svg></span><span data-i18n="cr_f1">Probá con 30 min por $9</span></li>
+            <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17 19 7" /></svg></span><span data-i18n="cr_f2">Después, $15 por hora</span></li>
+            <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17 19 7" /></svg></span><span data-i18n="cr_f3">Los créditos no vencen</span></li>
+            <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17 19 7" /></svg></span><span data-i18n="cr_f4">Los 3 idiomas y tu voz clonada</span></li>
+          </ul>
+          <a href="#join" class="btn btn-primary btn-block" data-i18n="cr_cta">Comprar créditos</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
