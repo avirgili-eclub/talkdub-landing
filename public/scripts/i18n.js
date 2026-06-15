@@ -151,7 +151,7 @@
 
       pp_name: "Pro",
       pp_kind: "Para uso intenso",
-      pp_tag: "Más elegido",
+      pp_tag: "Recomendado",
       pp_min: "400 min incluidos / mes",
       pp_extra: "Extra a $0.12 / min",
       pp_f1: "Todo lo de Starter, más:",
@@ -342,7 +342,7 @@
 
       pp_name: "Pro",
       pp_kind: "For heavy use",
-      pp_tag: "Most popular",
+      pp_tag: "Recommended",
       pp_min: "400 min included / mo",
       pp_extra: "Extra at $0.12 / min",
       pp_f1: "Everything in Starter, plus:",
