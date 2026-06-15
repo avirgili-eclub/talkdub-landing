@@ -32,6 +32,8 @@
       con_out: "Salida · Inglés",
       con_conv: "Traduciendo en vivo",
       con_vmic: "Micrófono virtual de Parla",
+      con_unmute: "Tocá para escuchar la voz",
+      con_mute: "Silenciar la voz",
       con_lat: "latencia",
       chip_voice: "Tu voz clonada",
       chip_live: "En vivo",
@@ -93,10 +95,10 @@
       /* languages */
       lang_eyebrow: "Idiomas",
       lang_title: "Español, inglés e italiano — en ambos sentidos.",
-      lang_sub: "Cada idioma funciona como origen y como destino de la voz. Mezclá como quieras.",
+      lang_sub: "Cada uno funciona como origen y como destino. Y sumamos portugués, por ahora solo hacia inglés.",
       tag_src: "Origen",
       tag_tgt: "Destino",
-      lang_soon: "Portugués, francés y alemán en camino",
+      lang_soon: "Francés y alemán en camino",
 
       /* history + mcp */
       hist_eyebrow: "Historial & MCP",
@@ -227,6 +229,8 @@
       con_out: "Output · English",
       con_conv: "Translating live",
       con_vmic: "Parla virtual microphone",
+      con_unmute: "Tap to hear the voice",
+      con_mute: "Mute the voice",
       con_lat: "latency",
       chip_voice: "Your cloned voice",
       chip_live: "Live",
@@ -283,10 +287,10 @@
 
       lang_eyebrow: "Languages",
       lang_title: "Spanish, English and Italian — both ways.",
-      lang_sub: "Every language works as a source and as a voice target. Mix them however you like.",
+      lang_sub: "Each one works as a source and a target. Plus Portuguese — for now, only into English.",
       tag_src: "Source",
       tag_tgt: "Target",
-      lang_soon: "Portuguese, French and German on the way",
+      lang_soon: "French and German on the way",
 
       hist_eyebrow: "History & MCP",
       hist_title: "Every meeting, ready for your AI.",

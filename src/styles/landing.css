@@ -229,7 +229,13 @@ h1, h2, h3 { letter-spacing: -.03em; line-height: 1.05; font-weight: 600; }
 .console-top .title { font-size: 12.5px; color: var(--text-3); font-weight: 520; }
 
 .lane { display: flex; align-items: center; gap: 13px; padding: 16px 20px; }
-.lane .flag { font-size: 20px; line-height: 1; }
+/* language-code badge (consistent across OS; flag emoji broke on Windows) */
+.lane .flag { font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: .04em;
+  min-width: 30px; height: 26px; padding: 0 8px; flex: none;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: var(--r-sm); border: 1px solid var(--line-strong); background: var(--surface-3); color: var(--text-2); }
+.lane.in .flag { color: var(--cyan); border-color: rgba(52,211,238,.34); background: rgba(52,211,238,.1); }
+.lane.out .flag { color: var(--green); border-color: var(--accent-line); background: var(--accent-soft); }
 .lane .lane-meta { flex: 1; min-width: 0; }
 .lane .lane-lbl { font-size: 11px; color: var(--text-3); font-weight: 560; letter-spacing: .04em; text-transform: uppercase; }
 .lane .lane-txt { font-size: 15.5px; font-weight: 500; margin-top: 3px; min-height: 22px; }
@@ -253,6 +259,22 @@ h1, h2, h3 { letter-spacing: -.03em; line-height: 1.05; font-weight: 600; }
 .console-foot .vmic .ic svg { width: 16px; height: 16px; }
 .console-foot .lat { margin-left: auto; font-size: 12.5px; color: var(--text-3); }
 .console-foot .lat b { color: var(--text); font-weight: 600; }
+
+/* clickable virtual-mic toggle (mute / unmute the demo voice) */
+.console-foot .vmic .mic-btn { position: relative; padding: 0; cursor: pointer;
+  transition: transform .15s var(--spring), background .18s var(--ease), color .18s var(--ease); }
+.console-foot .vmic .mic-btn:hover { transform: translateY(-1px); }
+.console-foot .vmic .mic-btn:focus-visible { outline: 2px solid var(--accent-line); outline-offset: 2px; }
+.console-foot .vmic .mic-btn .ic-off { display: none; }
+.console-foot .vmic .mic-btn.muted { background: var(--surface-3); color: var(--text-3); }
+.console-foot .vmic .mic-btn.muted .ic-on { display: none; }
+.console-foot .vmic .mic-btn.muted .ic-off { display: block; }
+/* gentle pulse hinting the muted mic is tappable */
+.console-foot .vmic .mic-btn.muted::after {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+  box-shadow: 0 0 0 0 rgba(62,224,160,.45); animation: beat 2.4s var(--ease) infinite;
+}
+@media (prefers-reduced-motion: reduce) { .console-foot .vmic .mic-btn.muted::after { animation: none; } }
 
 /* floating chips around console */
 .float-chip {
@@ -319,7 +341,10 @@ h1, h2, h3 { letter-spacing: -.03em; line-height: 1.05; font-weight: 600; }
 /* ============ Languages module ============ */
 .lang-matrix { display: flex; flex-direction: column; gap: 14px; }
 .lang-row { display: flex; align-items: center; gap: 14px; padding: 16px 20px; }
-.lang-row .lang-flag { font-size: 26px; line-height: 1; }
+.lang-row .lang-flag { font-family: var(--font-mono); font-size: 12px; font-weight: 600; letter-spacing: .04em;
+  min-width: 36px; height: 30px; padding: 0 9px; flex: none;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: var(--r-sm); border: 1px solid var(--line-strong); background: var(--surface-3); color: var(--text-2); }
 .lang-row .lang-name { font-size: 16px; font-weight: 560; flex: 1; }
 .lang-row .lang-native { font-size: 13px; color: var(--text-3); }
 .lang-row .lang-tags { display: flex; gap: 7px; }

@@ -230,10 +230,103 @@
   }
 
   /* ============================================================
-     LIVE TYPING DEMO  — ES input → EN output, cycling
+     HERO AUDIO  — voice for the live translation demo
+     Hybrid: plays /audio/{lang}-{idx}.mp3 if present, otherwise
+     falls back to the browser's Web Speech API (TTS).
+     Autoplay-safe: starts muted; the mic button is the unlock gesture.
+     ============================================================ */
+  const heroAudio = (function () {
+    const AUDIO_BASE = "/audio/";
+    const LANG_TAG = { es: "es-ES", en: "en-US" };
+    const supportsTTS = "speechSynthesis" in window;
+    let muted = true;
+    let token = 0;          // bumping invalidates any in-flight playback
+    let currentEl = null;   // <audio> currently playing, if any
+
+    // Some browsers populate voices lazily — warm them up.
+    if (supportsTTS) {
+      window.speechSynthesis.getVoices();
+      window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
+    }
+
+    function stop() {
+      token++;
+      if (currentEl) { try { currentEl.pause(); } catch (e) {} currentEl = null; }
+      if (supportsTTS) { try { window.speechSynthesis.cancel(); } catch (e) {} }
+    }
+
+    function ttsSpeak(lang, text, myToken) {
+      if (!supportsTTS || myToken !== token) return;
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = LANG_TAG[lang] || "en-US";
+      const v = window.speechSynthesis
+        .getVoices()
+        .find((x) => x.lang && x.lang.toLowerCase().startsWith(lang));
+      if (v) u.voice = v;
+      window.speechSynthesis.speak(u);
+    }
+
+    function speak(lang, idx, text) {
+      if (muted) return;
+      stop();
+      const myToken = token;
+      const a = new Audio(AUDIO_BASE + lang + "-" + idx + ".mp3");
+      let fellBack = false;
+      const fallback = () => {
+        if (fellBack || myToken !== token) return;
+        fellBack = true;
+        ttsSpeak(lang, text, myToken); // no real clip → use browser TTS
+      };
+      a.addEventListener("error", fallback);
+      currentEl = a;
+      a.play().catch(fallback);
+    }
+
+    return {
+      speak: speak,
+      stop: stop,
+      isMuted: function () { return muted; },
+      toggle: function () { muted = !muted; if (muted) stop(); return muted; },
+    };
+  })();
+
+  /* ============================================================
+     LIVE TYPING DEMO  — ES input → EN output, cycling (+ voice)
      ============================================================ */
   const inEl = $("#lane-in");
   const outEl = $("#lane-out");
+  const micBtn = $("#vmic-toggle");
+  const demoBtn = $("#hero-demo");
+
+  // Track the line on screen so unmuting gives instant feedback.
+  let curLine = { lang: "es", idx: 0, text: "" };
+
+  const syncMicUI = () => {
+    if (!micBtn) return;
+    const m = heroAudio.isMuted();
+    micBtn.classList.toggle("muted", m);
+    micBtn.setAttribute("aria-pressed", String(!m));
+    const label = window.i18n ? window.i18n.t(m ? "con_unmute" : "con_mute") : (m ? "Tap to hear" : "Mute");
+    micBtn.setAttribute("aria-label", label);
+    micBtn.setAttribute("title", label);
+  };
+
+  // Shared by the console mic and the hero "Ver demo" button.
+  function toggleAudio() {
+    const nowMuted = heroAudio.toggle();
+    syncMicUI();
+    if (!nowMuted) heroAudio.speak(curLine.lang, curLine.idx, curLine.text);
+  }
+
+  if (micBtn) {
+    micBtn.addEventListener("click", toggleAudio);
+    window.addEventListener("localechange", syncMicUI);
+    syncMicUI();
+  }
+  if (demoBtn) {
+    demoBtn.addEventListener("click", (e) => { e.preventDefault(); toggleAudio(); });
+  }
+
   if (inEl && outEl) {
     const pairs = [
       { es: "Hola, gracias por venir hoy.", en: "Hi, thanks for joining today." },
@@ -244,6 +337,7 @@
     if (reduce) {
       inEl.textContent = pairs[0].es;
       outEl.textContent = pairs[0].en;
+      curLine = { lang: "es", idx: 0, text: pairs[0].es };
     } else {
       let idx = 0;
       const wait = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -256,13 +350,19 @@
       }
       async function loop() {
         while (true) {
-          const p = pairs[idx % pairs.length];
+          const i = idx % pairs.length;
+          const p = pairs[i];
           outEl.innerHTML = "";
+          curLine = { lang: "es", idx: i, text: p.es };
+          heroAudio.speak("es", i, p.es);   // ES voice as the Spanish line types
           await type(inEl, p.es, 34);
-          await wait(220);                 // "processing"
+          await wait(220);                  // "processing"
+          curLine = { lang: "en", idx: i, text: p.en };
+          heroAudio.speak("en", i, p.en);   // EN voice as the English line types
           await type(outEl, p.en, 30);
           await wait(2200);
           inEl.innerHTML = ""; outEl.innerHTML = "";
+          heroAudio.stop();
           await wait(360);
           idx++;
         }
