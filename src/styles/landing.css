@@ -1,5 +1,5 @@
 /* ============================================================
-   PARLA — Landing page  ·  Direction: AURORA
+   TALKDUB — Landing page  ·  Direction: AURORA
    Real-time voice translation · by Veinticuatro7 Studio
    ============================================================ */
 
@@ -159,7 +159,7 @@ h1, h2, h3 { letter-spacing: -.03em; line-height: 1.05; font-weight: 600; }
 }
 .nav-inner { height: 68px; display: flex; align-items: center; gap: 22px; }
 .brand { display: inline-flex; align-items: center; gap: 11px; }
-.brand .logo { width: 30px; height: 30px; border-radius: 9px; flex: none; }
+.brand .logo { width: 32px; height: 32px; border-radius: 9px; flex: none; }
 .brand .name { font-size: 19px; font-weight: 640; letter-spacing: -.03em; }
 .nav-links { display: flex; align-items: center; gap: 4px; margin-left: 10px; }
 .nav-links a {

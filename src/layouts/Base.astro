@@ -8,7 +8,7 @@ interface Props {
 }
 
 const {
-  title = "Parla — Traducción de voz en tiempo real",
+  title = "Talkdub — Traducción de voz en tiempo real",
   description = "Hablá en tu idioma. Que te escuchen en el suyo. Traducción de voz en vivo con tu propia voz, por un micrófono virtual hacia Meet, Zoom, Teams, Discord y Slack.",
   lang = "es",
 } = Astro.props;
@@ -22,6 +22,7 @@ const {
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="theme-color" content="#070a12" />
+    <link rel="icon" href="/brand/talkdub-icon.svg" type="image/svg+xml" />
 
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />

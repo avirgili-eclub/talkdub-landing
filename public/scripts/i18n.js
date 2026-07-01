@@ -1,5 +1,5 @@
 /* ============================================================
-   Parla — custom i18n module
+   Talkdub — custom i18n module
    Locales: es (default), en  ·  mirrors the Astro build's i18n
    Usage: data-i18n="key" on any element. Attributes:
      data-i18n-ph  -> sets placeholder
@@ -27,11 +27,11 @@
       hero_m2: "Con tu propia voz",
       hero_m3: "ES · EN · IT",
       /* console */
-      con_title: "Parla · Sesión en vivo",
+      con_title: "Talkdub · Sesión en vivo",
       con_in: "Entrada · Español",
       con_out: "Salida · Inglés",
       con_conv: "Traduciendo en vivo",
-      con_vmic: "Micrófono virtual de Parla",
+      con_vmic: "Micrófono virtual de Talkdub",
       con_unmute: "Tocá para escuchar la voz",
       con_mute: "Silenciar la voz",
       con_lat: "latencia",
@@ -46,10 +46,10 @@
       /* how it works */
       how_eyebrow: "Cómo funciona",
       how_title: "Tres pasos. Cero fricción.",
-      how_sub: "Conectás Parla una vez y queda disponible como un micrófono más en todo el sistema.",
+      how_sub: "Conectás Talkdub una vez y queda disponible como un micrófono más en todo el sistema.",
       step1_t: "Hablá normal",
       step1_d: "Usás tu micrófono real y hablás en tu idioma, como siempre. Sin scripts ni botones raros.",
-      step2_t: "Parla traduce",
+      step2_t: "Talkdub traduce",
       step2_d: "Transcribe, traduce y reconstruye tu voz en el idioma de destino, en tiempo real.",
       step3_t: "Salí por el mic virtual",
       step3_d: "La voz traducida se inyecta como un micrófono virtual. Lo elegís en Meet, Zoom o donde sea.",
@@ -74,9 +74,9 @@
       /* voice */
       voice_eyebrow: "Tu voz, en otro idioma",
       voice_title: "Soná como vos. En cualquier idioma.",
-      voice_sub: "Parla no te convierte en un robot. Cloná tu propia voz o elegí una predefinida según el contexto.",
+      voice_sub: "Talkdub no te convierte en un robot. Cloná tu propia voz o elegí una predefinida según el contexto.",
       vf1_t: "Clon de tu voz",
-      vf1_d: "Entrenás Parla con 30 segundos de tu voz y hablás en inglés o italiano sonando como vos.",
+      vf1_d: "Entrenás Talkdub con 30 segundos de tu voz y hablás en inglés o italiano sonando como vos.",
       vf2_t: "Voces predefinidas",
       vf2_d: "¿No querés clonar? Elegí un tono listo: casual, profesional o de entrevista.",
       vf3_t: "Tono natural",
@@ -103,7 +103,7 @@
       /* history + mcp */
       hist_eyebrow: "Historial & MCP",
       hist_title: "Cada reunión, lista para tu IA.",
-      hist_sub: "Parla guarda el historial de cada sesión con transcripción y traducción. Exportalo o conectá tu IA por MCP para que arme resúmenes y tareas solo.",
+      hist_sub: "Talkdub guarda el historial de cada sesión con transcripción y traducción. Exportalo o conectá tu IA por MCP para que arme resúmenes y tareas solo.",
       hf1_t: "Historial de sesiones",
       hf1_d: "Transcripción bilingüe, duración y participantes de cada reunión, buscable.",
       hf2_t: "Exportá a tu IA",
@@ -116,7 +116,7 @@
       sess2_s: "ES → EN · 2 participantes · ayer",
       sess3_t: "Entrevista podcast #42",
       sess3_s: "EN → ES · 2 participantes · lun",
-      mcp_n1: "Parla",
+      mcp_n1: "Talkdub",
       mcp_n2: "Servidor MCP",
       mcp_n3: "Tu IA",
       export_md: "Markdown",
@@ -225,11 +225,11 @@
       hero_m1: "No awkward delay",
       hero_m2: "In your own voice",
       hero_m3: "ES · EN · IT",
-      con_title: "Parla · Live session",
+      con_title: "Talkdub · Live session",
       con_in: "Input · Spanish",
       con_out: "Output · English",
       con_conv: "Translating live",
-      con_vmic: "Parla virtual microphone",
+      con_vmic: "Talkdub virtual microphone",
       con_unmute: "Tap to hear the voice",
       con_mute: "Mute the voice",
       con_lat: "latency",
@@ -242,10 +242,10 @@
 
       how_eyebrow: "How it works",
       how_title: "Three steps. Zero friction.",
-      how_sub: "Set Parla up once and it shows up as just another microphone across your whole system.",
+      how_sub: "Set Talkdub up once and it shows up as just another microphone across your whole system.",
       step1_t: "Speak normally",
       step1_d: "Use your real mic and talk in your language, like always. No scripts, no weird buttons.",
-      step2_t: "Parla translates",
+      step2_t: "Talkdub translates",
       step2_d: "It transcribes, translates and rebuilds your voice in the target language, in real time.",
       step3_t: "Out through the virtual mic",
       step3_d: "The translated voice is injected as a virtual microphone. Pick it in Meet, Zoom or anywhere.",
@@ -268,9 +268,9 @@
 
       voice_eyebrow: "Your voice, in another language",
       voice_title: "Sound like you. In any language.",
-      voice_sub: "Parla doesn't turn you into a robot. Clone your own voice or pick a preset to fit the moment.",
+      voice_sub: "Talkdub doesn't turn you into a robot. Clone your own voice or pick a preset to fit the moment.",
       vf1_t: "Clone your voice",
-      vf1_d: "Train Parla with 30 seconds of your voice and speak English or Italian sounding like you.",
+      vf1_d: "Train Talkdub with 30 seconds of your voice and speak English or Italian sounding like you.",
       vf2_t: "Preset voices",
       vf2_d: "Don't want to clone? Pick a ready-made tone: casual, professional or interview.",
       vf3_t: "Natural tone",
@@ -295,7 +295,7 @@
 
       hist_eyebrow: "History & MCP",
       hist_title: "Every meeting, ready for your AI.",
-      hist_sub: "Parla keeps the history of every session with transcript and translation. Export it, or connect your AI over MCP so it builds summaries and tasks on its own.",
+      hist_sub: "Talkdub keeps the history of every session with transcript and translation. Export it, or connect your AI over MCP so it builds summaries and tasks on its own.",
       hf1_t: "Session history",
       hf1_d: "Bilingual transcript, duration and participants for every meeting, searchable.",
       hf2_t: "Export to your AI",
@@ -308,7 +308,7 @@
       sess2_s: "ES → EN · 2 participants · yesterday",
       sess3_t: "Podcast interview #42",
       sess3_s: "EN → ES · 2 participants · Mon",
-      mcp_n1: "Parla",
+      mcp_n1: "Talkdub",
       mcp_n2: "MCP server",
       mcp_n3: "Your AI",
       export_md: "Markdown",
@@ -422,14 +422,14 @@
       b.classList.toggle("on", b.getAttribute("data-lang-btn") === loc);
     });
     window.dispatchEvent(new CustomEvent("localechange", { detail: { locale: loc } }));
-    try { localStorage.setItem("parla_locale", loc); } catch (e) {}
+    try { localStorage.setItem("talkdub_locale", loc); } catch (e) {}
   }
 
   window.i18n = { t, setLocale, apply, get locale() { return current; } };
 
   document.addEventListener("DOMContentLoaded", function () {
     let saved = DEFAULT;
-    try { saved = localStorage.getItem("parla_locale") || DEFAULT; } catch (e) {}
+    try { saved = localStorage.getItem("talkdub_locale") || DEFAULT; } catch (e) {}
     setLocale(saved);
   });
 })();

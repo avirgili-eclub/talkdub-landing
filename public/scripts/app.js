@@ -1,5 +1,5 @@
 /* ============================================================
-   Parla — landing interactions
+   Talkdub — landing interactions
    (vanilla; mirrors the Astro/Alpine build's behaviours)
    ============================================================ */
 (function () {
