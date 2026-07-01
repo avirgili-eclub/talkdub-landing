@@ -1,10 +1,8 @@
-# Parla — Landing
+# Talkdub — Landing
 
-Landing page for **Parla**, a real-time voice translation desktop app by Veinticuatro7 Studio. You speak in your language; the other side hears you in theirs — in your own (optionally cloned) voice, through a virtual microphone into Meet, Zoom, Teams, Discord, Slack and any app with a mic.
+Landing page for **Talkdub** (DoblyTalk), a real-time voice translation desktop app by Veinticuatro7 Studio. You speak in your language; the other side hears you in theirs — in your own (optionally cloned) voice, through a virtual microphone into Meet, Zoom, Teams, Discord, Slack and any app with a mic.
 
 Built with **Astro** (static, zero JS shipped by default). The visual direction is *Aurora*: dark-only, geometric-neutral type (Geist + Geist Mono), green→cyan accent.
-
-> **Naming note:** the product is referred to as **Parla** throughout (working name from the design handoff). The repo is `talkdub-landing` / DoblyTalk. Renaming is a follow-up — most user-facing copy lives in `public/scripts/i18n.js` plus the `.name` brand spans in the components.
 
 ## Stack
 
@@ -60,4 +58,4 @@ Static HTML, no framework runtime. Build output: CSS ~6.4 KB gz, HTML ~9.4 KB gz
 
 ## Source
 
-Recreated from a Claude Design handoff bundle (`Parla - Landing v2.html`, Aurora direction). The original prototype lives in `_design_bundle/` (gitignored, reference only).
+Recreated from a Claude Design handoff bundle for the original Parla working-name prototype, using the Aurora direction. The original prototype lives in `_design_bundle/` (gitignored, reference only).
