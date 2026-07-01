@@ -32,3 +32,4 @@ _design_bundle/
 # local tooling artifacts
 .atl/
 .claude/
+.codex/
