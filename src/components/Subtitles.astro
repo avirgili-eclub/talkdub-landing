@@ -1,0 +1,84 @@
+---
+// Live subtitles — incoming audio understanding for the other side of the call.
+---
+
+<section class="section" id="subtitles" style="padding-top:0;">
+  <div class="wrap split">
+    <div class="split-copy reveal">
+      <span class="eyebrow" data-i18n="subs_eyebrow">La otra mitad de la conversación</span>
+      <h2 class="h-sec" style="margin-top:16px;" data-i18n="subs_title">Y entendé a los demás, en vivo.</h2>
+      <p class="lead" style="margin-top:16px;" data-i18n="subs_sub">Tu voz sale traducida. La voz de los demás te llega como subtítulos en tu idioma: los transcribimos y traducimos en tiempo real, sin que tengas que esperar.</p>
+      <ul class="feat-list">
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H7l-3 3z" /><path d="M8 9.5h8M8 12.5h5" /></svg></span><span><span class="ft-t" data-i18n="subs_f1_t">Subtítulos en tu idioma</span><span class="ft-d" data-i18n="subs_f1_d">Transcribimos y traducimos lo que dicen los demás a tu idioma, en vivo y sobre la misma llamada.</span></span></li>
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.4" /><path d="M5.5 19c.7-3.4 3.2-5.2 6.5-5.2s5.8 1.8 6.5 5.2" /></svg></span><span><span class="ft-t" data-i18n="subs_f2_t">Sabemos quién habla</span><span class="ft-d" data-i18n="subs_f2_d">Talkdub toma el nombre de cada persona desde Meet, Teams o Zoom. Si la plataforma no lo da, queda como “Persona 1” y lo renombrás vos.</span></span></li>
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 13h6l-1 9 9-11h-6z" /></svg></span><span><span class="ft-t" data-i18n="subs_f3_t">Liviano y al instante</span><span class="ft-d" data-i18n="subs_f3_d">Como son solo subtítulos —sin reconstruir la voz— arrancan al toque y no consumen tus minutos de voz.</span></span></li>
+      </ul>
+    </div>
+
+    <div class="split-media reveal" style="position:relative;">
+      <div class="float-chip tl">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#3ee0a0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H7l-3 3z" /><path d="M8 9.5h8M8 12.5h5" /></svg>
+        <span data-i18n="subs_chip_names">Nombres automáticos</span>
+      </div>
+      <div class="float-chip br">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#3ee0a0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 13h6l-1 9 9-11h-6z" /></svg>
+        <span data-i18n="subs_chip_cost">Sin costo de voz</span>
+      </div>
+
+      <div class="subs-stage">
+        <div class="subs-bar">
+          <span class="live-pill" style="border:none;background:none;padding:0;backdrop-filter:none;"><span class="dot beat"></span></span>
+          <span class="subs-room" data-i18n="subs_room">Reunión en vivo</span>
+          <span class="subs-people" data-i18n="subs_people">· 3 personas</span>
+          <span class="subs-plat">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="6.5" width="12" height="11" rx="2.6" fill="#00ac47" /><path d="M15 10.2l5.2-2.8a.8.8 0 0 1 1.2.7v7.8a.8.8 0 0 1-1.2.7L15 13.8z" fill="#00832d" /><path d="M3 9.1A2.6 2.6 0 0 1 5.6 6.5H9L3 12z" fill="#fbbc04" /><path d="M3 15a2.6 2.6 0 0 0 2.6 2.5h2.2L3 12z" fill="#ea4335" /><path d="M15 6.5h-3.4L15 10z" fill="#4285f4" /></svg>
+            Google Meet
+          </span>
+        </div>
+
+        <div class="subs-tiles">
+          <div class="subs-tile active">
+            <span class="st-speak" data-i18n="subs_speaking">Hablando</span>
+            <div class="st-who">
+              <span class="st-av">MR</span>
+              <span class="st-name"><span class="flag">IT</span> Marco Rossi</span>
+            </div>
+            <span class="st-meta" data-i18n="subs_p1_meta">Detectado · Google Meet</span>
+            <div class="st-mini" aria-hidden="true"><i style="height:40%"></i><i style="height:80%"></i><i style="height:55%"></i><i style="height:95%"></i><i style="height:50%"></i><i style="height:72%"></i></div>
+          </div>
+          <div class="subs-tile">
+            <div class="st-who">
+              <span class="st-av">P2</span>
+              <span class="st-name"><span class="flag">EN</span> <span data-i18n="subs_p2">Persona 2</span><svg class="st-edit" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5l5 5M4 20l1-4L16 5l3 3L8 19z" /></svg></span>
+            </div>
+            <span class="st-meta" data-i18n="subs_p2_meta">Tocá para renombrar</span>
+          </div>
+          <div class="subs-tile you">
+            <div class="st-who">
+              <span class="st-av">VOS</span>
+              <span class="st-name"><span class="flag">ES</span> <span data-i18n="subs_you">Vos</span></span>
+            </div>
+            <span class="st-meta" data-i18n="subs_you_meta">Hablás traducido</span>
+          </div>
+        </div>
+
+        <div class="subs-feed">
+          <div class="subs-line prev">
+            <span class="sl-head"><span class="flag">EN</span> <span data-i18n="subs_prev_who">Persona 2 · Inglés</span></span>
+            <div class="sl-trad" style="font-size:14px;font-weight:500;color:var(--text-2);" data-i18n="subs_prev">Comparto la pantalla en un segundo.</div>
+          </div>
+          <div class="subs-line cur">
+            <span class="sl-head"><span class="flag">IT</span> <span data-i18n="subs_cur_who">Marco Rossi · Italiano</span><span class="subs-tag" style="margin-left:auto;" data-i18n="subs_trad_lbl">Tu idioma · ES</span></span>
+            <div class="sl-orig" data-i18n="subs_orig">Allora, vediamo i numeri del trimestre.</div>
+            <div class="sl-trad"><span data-i18n="subs_trad">Bueno, veamos los números del trimestre.</span><span class="cur"></span></div>
+          </div>
+        </div>
+
+        <div class="subs-foot">
+          <span class="sf-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H7l-3 3z" /><path d="M8 9.5h8M8 12.5h5" /></svg><span data-i18n="subs_note">Solo subtítulos · no usa tu voz ni tus minutos</span></span>
+          <span class="sf-lat"><b data-i18n="subs_lat_v">~120 ms</b> <span data-i18n="subs_lat">en pantalla</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
