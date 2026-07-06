@@ -1,23 +1,41 @@
 interface Env {
   DB: D1Database;
+  ASSETS: Fetcher;
 }
 
 interface WhitelistBody {
   email?: string;
 }
 
-const CORS_HEADERS = {
+const JSON_HEADERS = {
+  'Content-Type': 'application/json; charset=utf-8',
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Methods': 'POST, OPTIONS',
   'Access-Control-Allow-Headers': 'Content-Type',
 };
 
-export const onRequestOptions: PagesFunction = async () =>
-  new Response(null, { status: 204, headers: CORS_HEADERS });
+export default {
+  async fetch(request: Request, env: Env): Promise<Response> {
+    const url = new URL(request.url);
 
-export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
+    if (url.pathname === '/api/whitelist') {
+      return handleWhitelistRequest(request, env);
+    }
+
+    return env.ASSETS.fetch(request);
+  },
+};
+
+async function handleWhitelistRequest(request: Request, env: Env): Promise<Response> {
+  if (request.method === 'OPTIONS') {
+    return new Response(null, { status: 204, headers: JSON_HEADERS });
+  }
+
+  if (request.method !== 'POST') {
+    return json({ error: 'method_not_allowed' }, 405);
+  }
+
   let body: WhitelistBody;
-
   try {
     body = (await request.json()) as WhitelistBody;
   } catch {
@@ -44,8 +62,11 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
   }
 
   return json({ success: true }, 201);
-};
+}
 
 function json(data: unknown, status = 200): Response {
-  return Response.json(data, { status, headers: CORS_HEADERS });
+  return new Response(JSON.stringify(data), {
+    status,
+    headers: JSON_HEADERS,
+  });
 }
