@@ -371,16 +371,48 @@
     }
   }
 
-  /* ---------- Whitelist forms (demo submit) ---------- */
+  /* ---------- Whitelist forms ---------- */
+  function copy(key, fallback) {
+    return window.i18n && typeof window.i18n.t === "function" ? window.i18n.t(key) : fallback;
+  }
+
   $$("[data-wl-form]").forEach((form) => {
-    form.addEventListener("submit", (e) => {
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
+
+      const input = form.querySelector('input[type="email"]');
       const btn = form.querySelector("button");
-      if (!btn) return;
+      const status = form.parentElement && form.parentElement.querySelector("[data-wl-status]");
+      if (!input || !btn) return;
+      if (!input.reportValidity()) return;
+
       const prev = btn.textContent;
-      btn.textContent = window.i18n.locale === "es" ? "¡Listo! ✓" : "You're in! ✓";
-      btn.style.background = "var(--green)";
-      setTimeout(() => { btn.textContent = prev; btn.style.background = ""; }, 2600);
+      btn.disabled = true;
+      btn.textContent = copy("final_loading", "Saving...");
+      if (status) status.textContent = "";
+
+      try {
+        const res = await fetch("/api/whitelist", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: input.value.trim() }),
+        });
+        const data = await res.json().catch(() => ({}));
+
+        if (res.ok) {
+          form.reset();
+          if (status) status.textContent = copy("final_success", "Done. You're on the whitelist.");
+        } else if (res.status === 409 || data.error === "already_registered") {
+          if (status) status.textContent = copy("final_already", "This email is already on the whitelist.");
+        } else {
+          if (status) status.textContent = copy("final_error", "We couldn't save your email. Try again in a few seconds.");
+        }
+      } catch {
+        if (status) status.textContent = copy("final_error", "We couldn't save your email. Try again in a few seconds.");
+      } finally {
+        btn.disabled = false;
+        btn.textContent = prev;
+      }
     });
   });
 })();

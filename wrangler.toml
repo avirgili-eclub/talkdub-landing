@@ -1,6 +1,8 @@
 name = "talkdub-landing"
 compatibility_date = "2026-07-01"
-workers_dev = true
+pages_build_output_dir = "./dist"
 
-[assets]
-directory = "./dist"
+[[d1_databases]]
+binding = "DB"
+database_name = "talkdub-whitelist"
+database_id = "0b91accb-8cb2-4953-a40d-8911ebc06f62"

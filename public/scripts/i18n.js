@@ -215,6 +215,10 @@
       final_sub: "Estamos abriendo acceso por tandas. Dejanos tu email y sé de los primeros en hablar sin barreras.",
       final_ph: "tu@email.com",
       final_btn: "Unirme a la whitelist",
+      final_loading: "Guardando...",
+      final_success: "Listo. Ya est\u00e1s en la whitelist.",
+      final_already: "Este email ya est\u00e1 en la whitelist.",
+      final_error: "No pudimos guardar tu email. Prob\u00e1 de nuevo en unos segundos.",
       final_note: "Apps para Windows y macOS · Acceso anticipado · Sin spam",
 
       /* footer */
@@ -435,6 +439,10 @@
       final_sub: "We're opening access in waves. Drop your email and be among the first to talk without barriers.",
       final_ph: "you@email.com",
       final_btn: "Join the whitelist",
+      final_loading: "Saving...",
+      final_success: "Done. You're on the whitelist.",
+      final_already: "This email is already on the whitelist.",
+      final_error: "We couldn't save your email. Try again in a few seconds.",
       final_note: "Apps for Windows and macOS · Early access · No spam",
 
       foot_tag: "Real-time voice translation, in your own voice. By Veinticuatro7 Studio.",

@@ -453,6 +453,8 @@ h1, h2, h3 { letter-spacing: -.03em; line-height: 1.05; font-weight: 600; }
 }
 .wl-form input::placeholder { color: var(--text-3); }
 .wl-form input:focus { border-color: var(--accent-line); box-shadow: 0 0 0 4px rgba(62,224,160,.12); }
+.wl-form button:disabled { opacity: .72; cursor: wait; transform: none; }
+.wl-status { min-height: 22px; margin: 12px auto 0; color: var(--green); font-size: 14px; font-weight: 600; text-align: center; }
 
 /* ============ Footer ============ */
 .footer { border-top: 1px solid var(--line); padding: 56px 0 40px; margin-top: 24px; }

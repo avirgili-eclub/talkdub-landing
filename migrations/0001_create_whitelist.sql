@@ -1,0 +1,3 @@
+CREATE TABLE IF NOT EXISTS whitelist (
+  email TEXT PRIMARY KEY
+);
